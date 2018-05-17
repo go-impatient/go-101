@@ -1,0 +1,13 @@
+# OS or Editor folders
+._*
+.cache
+.DS_Store
+.vscode
+.idea
+.project
+.settings
+.tmproj
+*.esproj
+*.sublime-project
+*.sublime-workspace
+Thumbs.db
