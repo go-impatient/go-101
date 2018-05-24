@@ -25,6 +25,20 @@ chan       else          goto     package     switch
 const      fallthrough   if       range       type
 continue   for           import   return      var
  ```
+ 
+ 我们可以把Go语言的25个关键字分为如下三类：
+ 
+ 1. 用于程序声明  
+ 2. 用于程序实体声明和定义
+ 3. 用于程序流程控制的关键字
+ 
+| 类别           | 关键字          
+| ------------- |:-------------:|
+|程序声明        | import、 package|
+|实体声明和定义   |  var、const、type、struct、func、interface、map、chan|
+|流程控制        | if、else、switch、case、fallthrough、default、for、range、continue、break、go、select、defer、goto、return|
+
+
 
  此外，还有大约30多个预定义的名字，比如`int`和`true`等，主要对对应内建的常量、类型和函数。
 
