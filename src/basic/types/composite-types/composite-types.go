@@ -1,1 +1,2 @@
-package composite_types
+package main
+

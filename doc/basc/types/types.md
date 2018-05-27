@@ -23,8 +23,6 @@ Go还支持两种内置别名类型：
 
 名称以u开头的整数类型是无符号类型。无符号类型的值始终为非负。类型名称中的数字表示该类型的值将在内存中占用多少二进制位。
 内存中int和uint值的大小取决于操作系统，可以是32位，也可以是64位。uintptr值的大小必须大到足以存储指针值无解释位的无符号整数。
-complex64的实部和虚部都是 float32 类型的的复数。
-complex128的实部和虚部都是 float64 类型的的复数。
 
 ```
 uint8(byte)     the set of all unsigned  8-bit integers (0 to 255)
@@ -80,6 +78,20 @@ uintptr      an unsigned integer large enough to store the uninterpreted bits of
 
     每种数字类型都有取值范围，超过了取值范围，出现 overflows 的错误。
     int，uint 的长度由操作系统的位数决定，在 32 位系统里面，它们的长度未 32 bit, 64 位系统，长度为 64 bit。
+
+##### 复数
+complex64：实部和虚部都是 float32 类型的的复数。
+complex128：实部和虚部都是 float64 类型的的复数。
+
+内建函数 `complex` 用于创建一个包含实部和虚部的复数。`complex` 函数的定义如下：
+```
+func complex(r, i FloatType) ComplexType
+```
+该函数的参数分别是实部和虚部，并返回一个复数类型。
+实部和虚部应该是相同类型，也就是 float32 或 float64。
+如果实部和虚部都是 float32 类型，则函数会返回一个 complex64 类型的复数。
+如果实部和虚部都是 float64 类型，则函数会返回一个 complex128 类型的复数。
+
 
 #### 字符串
 
