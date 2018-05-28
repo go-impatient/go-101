@@ -105,6 +105,35 @@ func numericFloat2()  {
 	fmt.Println(e) //output:112959
 }
 
+// 四舍五入
+func Round1(val float64, places int) float64 {
+	var t float64
+	f := math.Pow10(places)
+	x := val * f
+	if math.IsInf(x, 0) || math.IsNaN(x) {
+		return val
+	}
+	if x >= 0.0 {
+		t = math.Ceil(x)
+		if (t - x) > 0.50000000001 {
+			t -= 1.0
+		}
+	} else {
+		t = math.Ceil(-x)
+		if (t + x) > 0.50000000001 {
+			t -= 1.0
+		}
+		t = -t
+	}
+	x = t / f
+
+	if !math.IsInf(x, 0) {
+		return x
+	}
+
+	return t
+}
+
 // 利用fmt.Sprintf()
 func Round2(f float64, n int) float64 {
 	floatStr := fmt.Sprintf("%."+strconv.Itoa(n)+"f", f)
@@ -116,6 +145,8 @@ func Round(f float64, n int) float64 {
 	n10 := math.Pow10(n)
 	return math.Trunc((f+0.5/n10)*n10) / n10
 }
+
+
 
 func numericComplex()  {
 	c1 := complex(3, 4)
