@@ -1,5 +1,14 @@
-package main
+package list
 
-func main() {
-	$END$
+import (
+	"sync"
+	"sync/atomic"
+)
+
+type Env struct {
+	sync.RWMutex
+
+	id  uint64
+	mu  sync.Mutex
+	cfg atomic.Value
 }
